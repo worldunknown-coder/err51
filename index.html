@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ERR_51 | System Status</title>
+<style>
+:root {
+  --bg: #090c12;
+  --panel: #111824;
+  --line: #2a3749;
+  --text: #e8edf5;
+  --muted: #95a3b8;
+  --green: #a6f0c6;
+  --amber: #ffca7a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; padding: 20px;
+  display: grid; place-items: center;
+  background: radial-gradient(ellipse at top, #1a293a, var(--bg) 65%);
+  color: var(--text);
+  font: 15px/1.65 Consolas, "Courier New", monospace;
+}
+main { width: min(100%, 700px); }
+.window {
+  overflow: hidden; border: 1px solid var(--line);
+  border-radius: 12px; background: var(--panel);
+  box-shadow: 0 24px 70px #0008;
+}
+.topbar {
+  padding: 12px 16px; background: #172130;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted); font-size: 12px;
+  display: flex; justify-content: space-between; gap: 12px;
+}
+.content { padding: clamp(22px, 5vw, 40px); }
+.eyebrow { color: var(--muted); font-size: 12px; letter-spacing: .15em; }
+h1 { margin: 12px 0; font-size: clamp(48px, 12vw, 78px); line-height: 1; letter-spacing: -.06em; }
+h2 { font-size: clamp(24px, 6vw, 34px); line-height: 1.2; }
+p { color: #c7d1df; }
+.rule { height: 1px; background: var(--line); margin: 24px 0; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { padding: 4px 8px; border: 1px solid #6c5637; border-radius: 4px; color: var(--amber); font-size: 11px; }
+button, input { font: inherit; }
+button {
+  padding: 11px 15px; border: 1px solid #52647a;
+  border-radius: 6px; color: var(--text); background: #202d3e;
+  cursor: pointer;
+}
+button:hover { border-color: var(--green); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.hint, .small, .feedback { color: var(--muted); font-size: 12px; }
+.small { margin-top: 25px; }
+.code {
+  padding: 16px; overflow-wrap: anywhere;
+  border: 1px solid var(--line); border-radius: 7px;
+  background: #080b10; color: #d0dae8;
+}
+.comment { color: #8291a6; }
+.lit { color: var(--green); }
+label { display: block; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.entry { display: flex; flex-wrap: wrap; gap: 9px; }
+input {
+  flex: 1 1 180px; min-width: 0; padding: 11px;
+  color: var(--green); background: #080b10;
+  border: 1px solid #3a4b60; border-radius: 6px;
+}
+.feedback { min-height: 20px; margin-top: 9px; }
+.success { color: var(--green); }
+.final-mark {
+  width: 82px; height: 82px; display: grid; place-items: center;
+  margin: 22px 0; border: 1px solid var(--green);
+  border-radius: 10px; color: var(--green); font-size: 27px;
+}
+[hidden] { display: none !important; }
+@media (max-width: 450px) {
+  body { padding: 10px; }
+  .content { padding: 22px 17px; }
+  .entry button { width: 100%; }
+}
+</style>
+</head>
+<body>
+<main>
+<section class="window">
+  <div class="topbar">
+    <span>● ● ● &nbsp; UNKNOWN_PROCESS.EXE</span>
+    <span>BUILD 51.0</span>
+  </div>
+
+  <div class="content" id="start">
+    <div class="eyebrow">SYSTEM STATUS: ERROR</div>
+    <h1>ERR_51</h1>
+    <p>A small problem has occurred. Or has it?</p>
+    <div class="rule"></div>
+    <div class="pills">
+      <span class="pill">USER: RAMSEY</span>
+      <span class="pill">ACCESS: PENDING</span>
+    </div>
+    <p class="hint">Some systems are more interesting than they first appear.</p>
+    <button id="tryAgain">TRY AGAIN ↗</button>
+    <p class="small">BIRTHDAY PROTOCOL // 51.0</p>
+  </div>
+
+  <div class="content" id="hintScreen" hidden>
+    <div class="eyebrow">SYSTEM STATUS: STILL ERROR</div>
+    <h2>Well. That didn't work.</h2>
+    <p>Maybe you're looking at the wrong part of the system.</p>
+    <p>Some things aren't meant to be seen from the outside.</p>
+    <div class="rule"></div>
+    <p class="hint">Curiosity is useful. Try looking beyond what's immediately visible.</p>
+    <button id="lookCloser">TAKE A CLOSER LOOK</button>
+  </div>
+
+  <div class="content" id="debugScreen" hidden>
+    <div class="eyebrow">DIAGNOSTIC CONSOLE</div>
+    <h2>One condition isn't behaving.</h2>
+    <p>Read the logic carefully. What value does the system need?</p>
+    <div class="code">
+      <div class="comment">// She said she wasn't a tech person.</div>
+      <div class="comment">// Apparently, that was a lie.</div>
+      <br>
+      <div>const curiosity = <span class="lit">true</span>;</div>
+      <div>const taylorSwift = <span class="lit">false</span>;</div>
+      <div>const rain = <span class="lit">true</span>;</div>
+      <br>
+      <div>if (</div>
+      <div>&nbsp;&nbsp;curiosity === true &amp;&amp;</div>
+      <div>&nbsp;&nbsp;taylorSwift === false &amp;&amp;</div>
+      <div>&nbsp;&nbsp;rain === <span class="lit">false</span></div>
+      <div>) {</div>
+      <div>&nbsp;&nbsp;accessGranted = true;</div>
+      <div>}</div>
+    </div>
+    <div class="rule"></div>
+    <label for="answer">DEBUG INPUT // RAIN</label>
+    <div class="entry">
+      <input id="answer" placeholder="Enter corrected value..." autocomplete="off" spellcheck="false">
+      <button id="check">RUN CHECK</button>
+    </div>
+    <div class="feedback" id="feedback" role="status"></div>
+    <p class="hint">Hint: the condition says rain must equal what?</p>
+  </div>
+
+  <div class="content" id="successScreen" hidden>
+    <div class="eyebrow success">SYSTEM STATUS: RESOLVED</div>
+    <h2>DEBUG COMPLETE</h2>
+    <div class="code">
+      <div>Ramsey: curious <span class="success">✓</span></div>
+      <div>Rain: rejected <span class="success">✓</span></div>
+      <div>Taylor Swift: tolerated <span class="success">✓</span></div>
+      <div>Birthday: authorized <span class="success">✓</span></div>
+    </div>
+    <div class="final-mark">51</div>
+    <h2>Your final file is ready.</h2>
+    <p>One last thing to uncover. Your next track is waiting.</p>
+    <div class="rule"></div>
+    <p class="hint">FINAL FILE: not yet loaded.</p>
+    <p class="small">END OF DIAGNOSTIC // HAVE A GOOD BIRTHDAY</p>
+  </div>
+</section>
+</main>
+
+<script>
+const screens = ["start", "hintScreen", "debugScreen", "successScreen"];
+
+function showScreen(id) {
+  screens.forEach(screenId => {
+    document.getElementById(screenId).hidden = screenId !== id;
+  });
+}
+
+document.getElementById("tryAgain").addEventListener("click", () => {
+  showScreen("hintScreen");
+});
+
+document.getElementById("lookCloser").addEventListener("click", () => {
+  showScreen("debugScreen");
+});
+
+function checkAnswer() {
+  const answer = document.getElementById("answer").value.trim().toLowerCase();
+  const feedback = document.getElementById("feedback");
+
+  if (answer === "false") {
+    showScreen("successScreen");
+  } else {
+    feedback.textContent = "Not quite. Check the condition and try again.";
+  }
+}
+
+document.getElementById("check").addEventListener("click", checkAnswer);
+document.getElementById("answer").addEventListener("keydown", event => {
+  if (event.key === "Enter") checkAnswer();
+});
+</script>
+</body>
+</html>
